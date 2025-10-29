@@ -1,0 +1,43 @@
+.todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.todo-title {
+  color: rgb(223, 167, 13);
+  font-size: 32px;
+  margin: 20px;
+  text-align: center;
+}
+.todo-new {
+  margin: 20px auto;
+  text-align: center;
+}
+.todo-new input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.todo-new button {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-left: 8px;
+  border: none;
+  background-color: rgb(118, 118, 193);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.todo-data {
+  color: green;
+  font-weight: bold;
+}
+.todo-img img {
+  width: 50%;
+  margin-top: 20px;
+}
+.totoItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
