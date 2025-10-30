@@ -11,6 +11,7 @@ import ErrorPage from "./pages/error.jsx";
 import { AuthWrapper } from "./component/context/auth.context.jsx";
 import PrivateRoute from "./pages/private.route.jsx";
 import "nprogress/nprogress.css";
+import Home from "./pages/home.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <TodoApp />,
+        // element: <TodoApp />,
+        element: <Home />,
       },
       {
         path: "/users",
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <BookPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/todoapp",
+        element: (
+          <PrivateRoute>
+            <TodoApp />
           </PrivateRoute>
         ),
       },

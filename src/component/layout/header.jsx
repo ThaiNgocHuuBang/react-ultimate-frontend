@@ -71,6 +71,11 @@ const Header = () => {
       key: "books",
       icon: <BookOutlined />,
     },
+    {
+      label: <Link to={"/todoapp"}>Todo App</Link>,
+      key: "todoapp",
+      icon: <BookOutlined />,
+    },
     ...(!user.id
       ? [
           {
