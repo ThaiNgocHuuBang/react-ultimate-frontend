@@ -1,10 +1,26 @@
 .footer {
   position: fixed;
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: #ccc;
-  color: white;
+  background: rgba(25, 28, 48, 0.8);
+  backdrop-filter: blur(8px);
+  color: #e0e4ff;
   text-align: center;
-  padding: 5px;
+  padding: 12px 0;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.footer-links a {
+  color: #b0b7ff;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px #7b78ff;
 }

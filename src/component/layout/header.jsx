@@ -62,15 +62,16 @@ const Header = () => {
       icon: <HomeOutlined />,
     },
     {
-      label: <Link to={"/users"}>Users</Link>,
-      key: "users",
-      icon: <UserAddOutlined />,
-    },
-    {
       label: <Link to={"/books"}>Books</Link>,
       key: "books",
       icon: <BookOutlined />,
     },
+    {
+      label: <Link to={"/users"}>Users</Link>,
+      key: "users",
+      icon: <UserAddOutlined />,
+    },
+
     {
       label: <Link to={"/todoapp"}>Todo App</Link>,
       key: "todoapp",

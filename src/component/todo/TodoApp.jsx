@@ -32,7 +32,7 @@ const TodoApp = () => {
   };
 
   const deleteData = (id) => {
-    console.log("check id delete", id);
+    // console.log("check id delete", id);
     const newTodo = todoList.filter((item) => item.id !== id);
     setTodoList(newTodo);
   };

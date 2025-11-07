@@ -73,50 +73,81 @@ const ViewUserDetail = (props) => {
   return (
     <>
       <Drawer
-        width={"25vw"}
-        title="Basic Drawer"
+        width={"30vw"}
+        title={
+          <span style={{ fontWeight: "600", fontSize: "18px" }}>
+            User Details
+          </span>
+        }
         closable={{ "aria-label": "Close Button" }}
         onClose={() => {
           setDataDetail({});
           setIsDetailUserOpen(false);
         }}
         open={isDetailUserOpen}
+        styles={{
+          body: { background: "#f9fafc", padding: "20px 30px" },
+          header: { borderBottom: "1px solid #eee" },
+        }}
       >
-        <div style={{ display: "flex" }}>
-          <h4 style={{ marginRight: 30 }}>Id:</h4>
-          <p>{dataDetail._id}</p>
+        <div style={{ marginBottom: 10 }}>
+          <h4 style={{ marginBottom: 4, color: "#444" }}>ID:</h4>
+          <p style={{ margin: 0, color: "#666", wordBreak: "break-all" }}>
+            {dataDetail._id}
+          </p>
         </div>
-        <div style={{ display: "flex" }}>
-          <h4 style={{ marginRight: 30 }}>Name:</h4>
-          <p>{dataDetail.fullName}</p>
+
+        <div style={{ marginBottom: 10 }}>
+          <h4 style={{ marginBottom: 4, color: "#444" }}>Name:</h4>
+          <p style={{ margin: 0, color: "#222", fontWeight: "500" }}>
+            {dataDetail.fullName}
+          </p>
         </div>
-        <div style={{ display: "flex" }}>
-          <h4 style={{ marginRight: 30 }}>email:</h4>
-          <p>{dataDetail.email}</p>
+
+        <div style={{ marginBottom: 10 }}>
+          <h4 style={{ marginBottom: 4, color: "#444" }}>Email:</h4>
+          <p style={{ margin: 0, color: "#007bff" }}>{dataDetail.email}</p>
         </div>
-        <div style={{ display: "flex" }}>
-          <h4 style={{ marginRight: 30 }}>Phone:</h4>
-          <p>{dataDetail.phone}</p>
+
+        <div style={{ marginBottom: 10 }}>
+          <h4 style={{ marginBottom: 4, color: "#444" }}>Phone:</h4>
+          <p style={{ margin: 0, color: "#555" }}>{dataDetail.phone}</p>
         </div>
-        <div style={{ display: "flex" }}>
-          <h4 style={{ marginRight: 30 }}>Avatar:</h4>
+
+        <div style={{ marginBottom: 15 }}>
+          <h4 style={{ marginBottom: 6, color: "#444" }}>Avatar:</h4>
           <img
-            style={{ width: 200, height: 200 }}
+            style={{
+              width: 200,
+              height: 200,
+              objectFit: "cover",
+              borderRadius: 10,
+              border: "2px solid #ddd",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            }}
             src={`${import.meta.env.VITE_BACKEND_URL}/images/avatar/${
               dataDetail.avatar
             }`}
-            alt=""
+            alt="avatar"
           />
         </div>
-        <div style={{ marginTop: 20 }}>
+
+        {/* Upload button */}
+        <div style={{ marginTop: 15 }}>
           <label
             htmlFor="btnUpload"
             style={{
-              padding: 10,
-              background: "green",
-              borderRadius: 5,
+              display: "inline-block",
+              padding: "10px 18px",
+              background: "#f5b301",
+              color: "white",
+              fontWeight: 600,
+              borderRadius: 8,
               cursor: "pointer",
+              transition: "0.3s",
             }}
+            onMouseOver={(e) => (e.target.style.background = "#e09a00")}
+            onMouseOut={(e) => (e.target.style.background = "#f5b301")}
           >
             Upload Avatar
           </label>
@@ -129,14 +160,43 @@ const ViewUserDetail = (props) => {
             }}
           />
         </div>
+
+        {/* Preview ảnh */}
         {preview && (
           <>
-            <div style={{ marginTop: 20, border: "none" }}>
-              <img style={{ width: 200, height: 200 }} src={preview} alt="" />
+            <div
+              style={{
+                marginTop: 20,
+                border: "none",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 10,
+              }}
+            >
+              <img
+                style={{
+                  width: 200,
+                  height: 200,
+                  objectFit: "cover",
+                  borderRadius: 10,
+                  border: "2px dashed #ccc",
+                }}
+                src={preview}
+                alt=""
+              />
+              <Button
+                type="primary"
+                onClick={() => handleUpdateUserAvatar()}
+                style={{
+                  background: "#4a6cf7",
+                  borderRadius: 6,
+                  border: "none",
+                }}
+              >
+                Save
+              </Button>
             </div>
-            <Button type="primary" onClick={() => handleUpdateUserAvatar()}>
-              Save
-            </Button>
           </>
         )}
       </Drawer>

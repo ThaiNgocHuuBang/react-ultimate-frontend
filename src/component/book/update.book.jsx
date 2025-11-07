@@ -141,6 +141,7 @@ const UpdateBook = (props) => {
         onOk={() => form.submit()}
         onCancel={() => resetAndCloseModal()}
         maskClosable={false}
+        centered
       >
         <Form
           form={form}
@@ -210,7 +211,7 @@ const UpdateBook = (props) => {
                 htmlFor="btnUpload"
                 style={{
                   padding: 10,
-                  background: "green",
+                  background: "#e7a10bff",
                   borderRadius: 5,
                   cursor: "pointer",
                 }}

@@ -1,20 +1,18 @@
-// import poster from "../assets/poster.jpg";
+import banner from "../assets/banner.webp";
+
 const Home = () => {
   return (
     <>
-      <div style={{ textAlign: "center" }}>
-        <h1>Home page</h1>
-      </div>
-      {/* <img
-        src={poster}
-        alt=""
+      <img
+        src={banner}
+        alt="React Banner"
         style={{
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           objectFit: "cover",
-          objectPosition: "center",
+          display: "block",
         }}
-      /> */}
+      />
     </>
   );
 };

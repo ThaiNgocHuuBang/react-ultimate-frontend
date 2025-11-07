@@ -32,6 +32,9 @@
   color: green;
   font-weight: bold;
 }
+.todo-img {
+  text-align: center;
+}
 .todo-img img {
   width: 50%;
   margin-top: 20px;

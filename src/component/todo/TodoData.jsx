@@ -15,7 +15,19 @@ const TodoData = (prpos) => {
         return (
           <div className="totoItem" key={item.id}>
             <div>{item.name}</div>
-            <button onClick={() => handleClick(item.id)}>Delete</button>
+            <button
+              style={{
+                padding: 5,
+                background: "red",
+                borderRadius: 5,
+                cursor: "pointer",
+                color: "white",
+                border: "none",
+              }}
+              onClick={() => handleClick(item.id)}
+            >
+              Delete
+            </button>
           </div>
         );
       })}

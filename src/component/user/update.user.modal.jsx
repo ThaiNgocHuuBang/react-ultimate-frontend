@@ -53,27 +53,34 @@ const UpdateUserModal = (props) => {
       maskClosable={false}
       okText="Save"
     >
-      <div style={{ margin: 20 }}>
-        <div>
-          <span>Id</span>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 20,
+          marginTop: 10,
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <label style={{ fontWeight: 500, marginBottom: 6 }}>Id</label>
           <Input value={id} disabled />
         </div>
-        <div>
-          <span>Full Name</span>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <label style={{ fontWeight: 500, marginBottom: 6 }}>Full Name</label>
           <Input
             value={fullName}
-            onChange={(event) => {
-              setFullName(event.target.value);
-            }}
+            onChange={(event) => setFullName(event.target.value)}
           />
         </div>
-        <div>
-          <span>Phone number</span>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <label style={{ fontWeight: 500, marginBottom: 6 }}>
+            Phone number
+          </label>
           <Input
             value={phone}
-            onChange={(event) => {
-              setPhone(event.target.value);
-            }}
+            onChange={(event) => setPhone(event.target.value)}
           />
         </div>
       </div>
